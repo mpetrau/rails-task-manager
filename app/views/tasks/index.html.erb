@@ -1,0 +1,15 @@
+<h1>Your Tasks</h1>
+
+<h3>Your current tasks list:</h3>
+<% @tasks.each do |task| %>
+  <ul>
+    <li><%= task.done ? "[x]" : "[ ]" %> <%= link_to task.name, task_path(task) %> - <%= task.deadline %></li>
+  </ul>
+<% end %>
+
+<br>
+
+<h3> <%= link_to "Add a new task", new_task_path %></h3>
+
+
+
